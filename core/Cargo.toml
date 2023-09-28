@@ -1,0 +1,13 @@
+[package]
+name = "core"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.75"
+approx = "0.5.1"
+bevy = "0.11.2"
+ron = "0.8.1"
+serde = { version = "1.0.188", features = ["derive"] }

@@ -1,0 +1,33 @@
+{
+    "tileset_name": "name",
+    "image": {
+        "path": "./image.png",
+        "dimensions": {
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "tile_size": {
+        "width": 0.0,
+        "height": 0.0
+    },
+    "tiles": [
+        {
+            "tile_id": 0,
+            "position": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "tile_id": 0,
+            "positions": [
+                {
+                    "x": 0,
+                    "y": 0
+                }
+            ],
+            "speed": 0.25
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "tilemap_name": "Name",
+    "tilesets": [
+        {
+            "tileset_name": "tileset.tsf",
+            "alias": "t"
+        }
+    ],
+    "tile_size": {
+        "width": 0.0,
+        "height": 0.0
+    },
+    "layers": [
+        {
+            "ordering_id": 0,
+            "tiles": [
+                ["t0", "t0", "t0", "t0"],
+                ["t0", "t0", "t0", "t0"],
+                ["t0", "t0", "t0", "t0"],
+                ["t0", "t0", "t0", "t0"]
+            ]
+        }
+    ]
+}
