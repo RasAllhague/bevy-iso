@@ -9,6 +9,9 @@ pub trait Loader {
     fn unload(&mut self, name: &str);
 }
 
+
+pub struct TilemapDefinitionCollection();
+
 #[derive(Default)]
 pub struct TilemapAssetLoader;
 

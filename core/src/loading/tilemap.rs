@@ -106,7 +106,7 @@ impl TilemapDefinitionBuilder {
             .tilesets
             .iter()
             .enumerate()
-            .filter(|(index, tile_link)| tile_link.path == tileset_link.path)
+            .filter(|(_, tile_link)| tile_link.path == tileset_link.path)
             .map(|(index, _)| index)
             .next();
 
@@ -124,7 +124,7 @@ impl TilemapDefinitionBuilder {
             .tilesets
             .iter()
             .enumerate()
-            .filter(|(index, tile_link)| tile_link.path == path)
+            .filter(|(_, tile_link)| tile_link.path == path)
             .map(|(index, _)| index)
             .next();
 
@@ -141,7 +141,7 @@ impl TilemapDefinitionBuilder {
             .layers
             .iter()
             .enumerate()
-            .filter(|(index, layer)| layer.ordering_id == layer_def.ordering_id)
+            .filter(|(_, layer)| layer.ordering_id == layer_def.ordering_id)
             .map(|(index, _)| index)
             .next();
 
@@ -159,7 +159,7 @@ impl TilemapDefinitionBuilder {
             .layers
             .iter()
             .enumerate()
-            .filter(|(index, layer)| layer.ordering_id == ordering_id)
+            .filter(|(_, layer)| layer.ordering_id == ordering_id)
             .map(|(index, _)| index)
             .next();
 
@@ -209,6 +209,7 @@ mod tests {
         );
     }
 
+    #[test]
     fn test_remove_layer() {
         let definition = TilemapDefinitionBuilder::new("testmap.json")
             .add_tileset(TilesetLink::new(Path::new("./testset.json"), 't'))
@@ -226,6 +227,7 @@ mod tests {
         );
     }
 
+    #[test]
     fn test_with_tilesize() {
         let definition = TilemapDefinitionBuilder::new("testmap.json")
             .with_tile_size(32, 32)

@@ -1,5 +1,3 @@
-use std::path::Path;
-
 pub mod tileset;
 pub mod tilemap;
 pub mod loader;

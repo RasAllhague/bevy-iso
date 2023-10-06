@@ -209,10 +209,6 @@ impl TilesetDefinitionBuilder {
             return Err(Error::DublicatedTilePositions(dublicated_positions));
         }
 
-        // if !Self::tile_is_in_bounds() {
-        // TODO: DO THIS!!!
-        // }
-
         let name = match self.name {
             Some(n) => n,
             None => Path::new(&self.source.path)
@@ -242,7 +238,7 @@ impl TilesetDefinitionBuilder {
             .group_by(|tile| tile.id())
             .into_iter()
             .map(|(key, group)| (key, group.count() as u32))
-            .filter(|(id, count)| *count >= 2)
+            .filter(|(_, count)| *count >= 2)
             .collect()
     }
 
@@ -263,14 +259,6 @@ impl TilesetDefinitionBuilder {
             .into_iter()
             .map(|((x, y), group)| ((x, y), group.map(|(id, _, _)| id).collect::<Vec<u32>>()))
             .collect()
-    }
-
-    fn tile_is_in_bounds(
-        tile: TileDefinition,
-        tile_size: TileSize,
-        image_dimensions: ImageDimensions,
-    ) -> bool {
-        todo!();
     }
 }
 

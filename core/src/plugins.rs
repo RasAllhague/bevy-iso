@@ -1,7 +1,6 @@
 use bevy::prelude::*;
 
 use crate::{
-    grid::GridPosition,
     ordering::{order_static_tile_z, reorder_on_rotation, update_dynamic_object_z},
     rotate::{rotate_grid, GridRotationEvent}, loading::{loader::TilemapAssetLoader, tilemap::TilemapDefinition},
 };
