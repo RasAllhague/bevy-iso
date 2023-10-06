@@ -1,6 +1,8 @@
 use bevy::prelude::*;
 
-use crate::loading::TilemapFile;
+use crate::loading::tilemap::TilemapDefinition;
+
+//use crate::loading::TilemapFile;
 
 /// Marker for grid entities.
 #[derive(Component, Copy, Clone, Debug)]
@@ -9,7 +11,7 @@ pub struct GridMarker;
 /// Contains grid data.
 #[derive(Component, Clone, Debug)]
 pub struct Grid {
-    pub tilemap_handle: Handle<TilemapFile>,
+    pub tilemap_handle: Handle<TilemapDefinition>,
     pub texture_atlas_handle: Option<Handle<TextureAtlas>>,
 }
 

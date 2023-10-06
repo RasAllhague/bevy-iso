@@ -9,5 +9,6 @@ edition = "2021"
 anyhow = "1.0.75"
 approx = "0.5.1"
 bevy = "0.11.2"
+itertools = "0.11.0"
 ron = "0.8.1"
 serde = { version = "1.0.188", features = ["derive"] }

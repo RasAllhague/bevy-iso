@@ -1,14 +1,21 @@
 use bevy::prelude::*;
 
-use crate::{WorldScale, grid::{Grid, TileSize, GridPosition}, loading::TilemapFile, tile::{TileBundle, TileId}, ordering::ZOffset, tilemap::TilemapBundle, math::grid_to_world};
+use crate::{WorldScale, grid::{Grid, TileSize, GridPosition}, tile::{TileBundle, TileId}, ordering::ZOffset, tilemap::TilemapBundle, math::grid_to_world, loading::tilemap::TilemapDefinition};
+
+pub trait Spawner {
+    type Definition;
+
+    fn spawn(&self, defintion: Self::Definition) -> Entity;
+}
 
 pub fn spawn_tilemap(
     mut commands: Commands,
     mut new_grids: Query<(Entity, &WorldScale, &mut Grid), Added<Grid>>,
     asset_server: Res<AssetServer>,
-    tilemaps: Res<Assets<TilemapFile>>,
+    tilemaps: Res<Assets<TilemapDefinition>>,
     mut texture_atlases: ResMut<Assets<TextureAtlas>>,
 ) {
+    /*
     for (grid_entity, scale, mut grid) in new_grids.iter_mut() {
         if let Some(tilemap_file) = tilemaps.get(&grid.tilemap_handle) {
             let tilesize =
@@ -77,4 +84,5 @@ pub fn spawn_tilemap(
             }
         }
     }
+    */
 }
