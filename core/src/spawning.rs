@@ -5,8 +5,20 @@ use crate::{WorldScale, grid::{Grid, TileSize, GridPosition}, tile::{TileBundle,
 pub trait Spawner {
     type Definition;
 
-    fn spawn(&self, defintion: Self::Definition) -> Entity;
+    fn spawn(&self, commands: &mut Commands, defintion: Self::Definition) -> Entity;
 }
+
+#[derive(Resource)]
+pub struct TilemapSpawner;
+
+impl Spawner for TilemapSpawner {
+    type Definition = TilemapDefinition;
+
+    fn spawn(&self, commands: &mut Commands, defintion: Self::Definition) -> Entity {
+        todo!()
+    }
+}
+
 
 pub fn spawn_tilemap(
     mut commands: Commands,
